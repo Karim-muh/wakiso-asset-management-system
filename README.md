@@ -27,5 +27,3 @@ Team members
 -MUHEREZA DIDAS
 -LUGEMWA MUHUSIN
 -EGWANG JOSHUA
-Group Project - Islamic University in Uganda
-Names Muhsin Jesus Joshua
