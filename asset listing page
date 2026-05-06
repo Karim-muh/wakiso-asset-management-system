@@ -1,0 +1,13 @@
+@app.route('/assets')
+def assets():
+    all_assets = Asset.query.all()
+    return render_template('assets.html', assets=all_assets)
+<table>
+<tr><th>Name</th><th>Status</th></tr>
+{% for asset in assets %}
+<tr>
+<td>{{ asset.name }}</td>
+<td>{{ asset.status }}</td>
+</tr>
+{% endfor %}
+</table>
