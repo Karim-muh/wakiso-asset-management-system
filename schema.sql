@@ -10,17 +10,17 @@ CREATE TABLE users (
 # DEPARTMENTS
 CREATE TABLE departments (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100),
-    location VARCHAR(100)
+    name VARCHAR(20),
+    location VARCHAR(30)
 );
 
 # ASSETS
 CREATE TABLE assets (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100),
+    name VARCHAR(20),
     category VARCHAR(50),
     status ENUM('available','assigned','maintenance','disposed') DEFAULT 'available',
-    location VARCHAR(100)
+    location VARCHAR(20)
 );
 
 # REQUISITIONS (REQUESTS)
