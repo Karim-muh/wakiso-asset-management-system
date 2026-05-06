@@ -1,0 +1,32 @@
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(50))
+    email = db.Column(db.String(100))
+    password = db.Column(db.String(255))
+    role = db.Column(db.String(20))
+class Asset(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100))
+    category = db.Column(db.String(50))
+    status = db.Column(db.String(50), default='available')
+    location = db.Column(db.String(100))
+class Department(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100))
+    location = db.Column(db.String(100))
+class Requisition(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer)
+    asset_id = db.Column(db.Integer)
+    status = db.Column(db.String(20), default='pending')
+class Allocation(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    asset_id = db.Column(db.Integer)
+    user_id = db.Column(db.Integer)
+class Role:
+    ADMIN = "admin"
+    EMPLOYEE = "employee"
+class AuthManager:
+    @staticmethod
+    def check_role(user, role):
+        return user.role == role
