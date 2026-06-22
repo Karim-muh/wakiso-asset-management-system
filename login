@@ -1,4 +1,3 @@
-pip install flask-login werkzeug
 from flask import request, render_template, redirect
 from werkzeug.security import check_password_hash
 
